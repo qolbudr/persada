@@ -70,3 +70,12 @@ flutter build ios --release
 - Periksa device/emulator dengan `flutter devices`.
 - Buka proyek di VS Code atau Android Studio untuk debugging/Hot Reload lebih nyaman.
 
+## Modifikasi UI
+
+UI durasi yang ditampilkan di List Surah diganti menjadi chevron dikarenakan keterbatasan API yang tidak menyertakan durasi pada endpoint `https://api.alquran.cloud/v1/surah`
+
+## Screenshot
+![Layar Utama](screenshot/layar_utama.mov)
+![Play Pause](screenshot/play_pause.mov)
+![Playlist](screenshot/playlist.mov)
+
