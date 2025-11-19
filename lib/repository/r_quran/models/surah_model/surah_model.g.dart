@@ -13,6 +13,9 @@ _SurahModel _$SurahModelFromJson(Map<String, dynamic> json) => _SurahModel(
   englishNameTranslation: json['englishNameTranslation'] as String?,
   numberOfAyahs: json['numberOfAyahs'] as num?,
   revelationType: json['revelationType'] as String?,
+  reciter: json['reciter'] == null
+      ? null
+      : ReciterModel.fromJson(json['reciter'] as Map<String, dynamic>),
 );
 
 Map<String, dynamic> _$SurahModelToJson(_SurahModel instance) =>
@@ -23,4 +26,5 @@ Map<String, dynamic> _$SurahModelToJson(_SurahModel instance) =>
       'englishNameTranslation': instance.englishNameTranslation,
       'numberOfAyahs': instance.numberOfAyahs,
       'revelationType': instance.revelationType,
+      'reciter': instance.reciter?.toJson(),
     };

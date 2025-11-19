@@ -6,7 +6,6 @@ import 'package:myumrah/core/widgets/w_appbar.dart';
 import 'package:myumrah/core/widgets/w_refresher.dart';
 import 'package:myumrah/core/widgets/w_wrapper.dart';
 import 'package:myumrah/feature/quran/controllers/c_quran_surah/c_quran_surah.dart';
-import 'package:myumrah/feature/quran/quran_routes.dart';
 import 'package:myumrah/feature/quran/widgets/w_surah_tile.dart';
 
 class VQuranSurahMobile extends StatelessWidget {
@@ -24,7 +23,7 @@ class VQuranSurahMobile extends StatelessWidget {
             onRefresh: o.onGetData,
             child: ListView(
               children: [
-                ...o.state.surahs.map((item) => WSurahTile(item: item, onTap: () => QuranRoutes.toPlayer())),
+                ...o.state.surahs.map((item) => WSurahTile(item: item, onTap: () => o.onGotoPlayer(item))),
               ].joinWidget(Divider(height: 1, color: ThemeColor.dividerMain)),
             ),
           ),

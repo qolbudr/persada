@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$SurahModel {
 
- num? get number; String? get name; String? get englishName; String? get englishNameTranslation; num? get numberOfAyahs; String? get revelationType;
+ num? get number; String? get name; String? get englishName; String? get englishNameTranslation; num? get numberOfAyahs; String? get revelationType; ReciterModel? get reciter;
 /// Create a copy of SurahModel
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -28,16 +28,16 @@ $SurahModelCopyWith<SurahModel> get copyWith => _$SurahModelCopyWithImpl<SurahMo
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is SurahModel&&(identical(other.number, number) || other.number == number)&&(identical(other.name, name) || other.name == name)&&(identical(other.englishName, englishName) || other.englishName == englishName)&&(identical(other.englishNameTranslation, englishNameTranslation) || other.englishNameTranslation == englishNameTranslation)&&(identical(other.numberOfAyahs, numberOfAyahs) || other.numberOfAyahs == numberOfAyahs)&&(identical(other.revelationType, revelationType) || other.revelationType == revelationType));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is SurahModel&&(identical(other.number, number) || other.number == number)&&(identical(other.name, name) || other.name == name)&&(identical(other.englishName, englishName) || other.englishName == englishName)&&(identical(other.englishNameTranslation, englishNameTranslation) || other.englishNameTranslation == englishNameTranslation)&&(identical(other.numberOfAyahs, numberOfAyahs) || other.numberOfAyahs == numberOfAyahs)&&(identical(other.revelationType, revelationType) || other.revelationType == revelationType)&&(identical(other.reciter, reciter) || other.reciter == reciter));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,number,name,englishName,englishNameTranslation,numberOfAyahs,revelationType);
+int get hashCode => Object.hash(runtimeType,number,name,englishName,englishNameTranslation,numberOfAyahs,revelationType,reciter);
 
 @override
 String toString() {
-  return 'SurahModel(number: $number, name: $name, englishName: $englishName, englishNameTranslation: $englishNameTranslation, numberOfAyahs: $numberOfAyahs, revelationType: $revelationType)';
+  return 'SurahModel(number: $number, name: $name, englishName: $englishName, englishNameTranslation: $englishNameTranslation, numberOfAyahs: $numberOfAyahs, revelationType: $revelationType, reciter: $reciter)';
 }
 
 
@@ -48,11 +48,11 @@ abstract mixin class $SurahModelCopyWith<$Res>  {
   factory $SurahModelCopyWith(SurahModel value, $Res Function(SurahModel) _then) = _$SurahModelCopyWithImpl;
 @useResult
 $Res call({
- num? number, String? name, String? englishName, String? englishNameTranslation, num? numberOfAyahs, String? revelationType
+ num? number, String? name, String? englishName, String? englishNameTranslation, num? numberOfAyahs, String? revelationType, ReciterModel? reciter
 });
 
 
-
+$ReciterModelCopyWith<$Res>? get reciter;
 
 }
 /// @nodoc
@@ -65,7 +65,7 @@ class _$SurahModelCopyWithImpl<$Res>
 
 /// Create a copy of SurahModel
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? number = freezed,Object? name = freezed,Object? englishName = freezed,Object? englishNameTranslation = freezed,Object? numberOfAyahs = freezed,Object? revelationType = freezed,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? number = freezed,Object? name = freezed,Object? englishName = freezed,Object? englishNameTranslation = freezed,Object? numberOfAyahs = freezed,Object? revelationType = freezed,Object? reciter = freezed,}) {
   return _then(_self.copyWith(
 number: freezed == number ? _self.number : number // ignore: cast_nullable_to_non_nullable
 as num?,name: freezed == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
@@ -73,10 +73,23 @@ as String?,englishName: freezed == englishName ? _self.englishName : englishName
 as String?,englishNameTranslation: freezed == englishNameTranslation ? _self.englishNameTranslation : englishNameTranslation // ignore: cast_nullable_to_non_nullable
 as String?,numberOfAyahs: freezed == numberOfAyahs ? _self.numberOfAyahs : numberOfAyahs // ignore: cast_nullable_to_non_nullable
 as num?,revelationType: freezed == revelationType ? _self.revelationType : revelationType // ignore: cast_nullable_to_non_nullable
-as String?,
+as String?,reciter: freezed == reciter ? _self.reciter : reciter // ignore: cast_nullable_to_non_nullable
+as ReciterModel?,
   ));
 }
+/// Create a copy of SurahModel
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$ReciterModelCopyWith<$Res>? get reciter {
+    if (_self.reciter == null) {
+    return null;
+  }
 
+  return $ReciterModelCopyWith<$Res>(_self.reciter!, (value) {
+    return _then(_self.copyWith(reciter: value));
+  });
+}
 }
 
 
@@ -158,10 +171,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( num? number,  String? name,  String? englishName,  String? englishNameTranslation,  num? numberOfAyahs,  String? revelationType)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( num? number,  String? name,  String? englishName,  String? englishNameTranslation,  num? numberOfAyahs,  String? revelationType,  ReciterModel? reciter)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _SurahModel() when $default != null:
-return $default(_that.number,_that.name,_that.englishName,_that.englishNameTranslation,_that.numberOfAyahs,_that.revelationType);case _:
+return $default(_that.number,_that.name,_that.englishName,_that.englishNameTranslation,_that.numberOfAyahs,_that.revelationType,_that.reciter);case _:
   return orElse();
 
 }
@@ -179,10 +192,10 @@ return $default(_that.number,_that.name,_that.englishName,_that.englishNameTrans
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( num? number,  String? name,  String? englishName,  String? englishNameTranslation,  num? numberOfAyahs,  String? revelationType)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( num? number,  String? name,  String? englishName,  String? englishNameTranslation,  num? numberOfAyahs,  String? revelationType,  ReciterModel? reciter)  $default,) {final _that = this;
 switch (_that) {
 case _SurahModel():
-return $default(_that.number,_that.name,_that.englishName,_that.englishNameTranslation,_that.numberOfAyahs,_that.revelationType);case _:
+return $default(_that.number,_that.name,_that.englishName,_that.englishNameTranslation,_that.numberOfAyahs,_that.revelationType,_that.reciter);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -199,10 +212,10 @@ return $default(_that.number,_that.name,_that.englishName,_that.englishNameTrans
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( num? number,  String? name,  String? englishName,  String? englishNameTranslation,  num? numberOfAyahs,  String? revelationType)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( num? number,  String? name,  String? englishName,  String? englishNameTranslation,  num? numberOfAyahs,  String? revelationType,  ReciterModel? reciter)?  $default,) {final _that = this;
 switch (_that) {
 case _SurahModel() when $default != null:
-return $default(_that.number,_that.name,_that.englishName,_that.englishNameTranslation,_that.numberOfAyahs,_that.revelationType);case _:
+return $default(_that.number,_that.name,_that.englishName,_that.englishNameTranslation,_that.numberOfAyahs,_that.revelationType,_that.reciter);case _:
   return null;
 
 }
@@ -214,7 +227,7 @@ return $default(_that.number,_that.name,_that.englishName,_that.englishNameTrans
 @JsonSerializable()
 
 class _SurahModel extends SurahModel {
-  const _SurahModel({this.number, this.name, this.englishName, this.englishNameTranslation, this.numberOfAyahs, this.revelationType}): super._();
+  const _SurahModel({this.number, this.name, this.englishName, this.englishNameTranslation, this.numberOfAyahs, this.revelationType, this.reciter}): super._();
   factory _SurahModel.fromJson(Map<String, dynamic> json) => _$SurahModelFromJson(json);
 
 @override final  num? number;
@@ -223,6 +236,7 @@ class _SurahModel extends SurahModel {
 @override final  String? englishNameTranslation;
 @override final  num? numberOfAyahs;
 @override final  String? revelationType;
+@override final  ReciterModel? reciter;
 
 /// Create a copy of SurahModel
 /// with the given fields replaced by the non-null parameter values.
@@ -237,16 +251,16 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _SurahModel&&(identical(other.number, number) || other.number == number)&&(identical(other.name, name) || other.name == name)&&(identical(other.englishName, englishName) || other.englishName == englishName)&&(identical(other.englishNameTranslation, englishNameTranslation) || other.englishNameTranslation == englishNameTranslation)&&(identical(other.numberOfAyahs, numberOfAyahs) || other.numberOfAyahs == numberOfAyahs)&&(identical(other.revelationType, revelationType) || other.revelationType == revelationType));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _SurahModel&&(identical(other.number, number) || other.number == number)&&(identical(other.name, name) || other.name == name)&&(identical(other.englishName, englishName) || other.englishName == englishName)&&(identical(other.englishNameTranslation, englishNameTranslation) || other.englishNameTranslation == englishNameTranslation)&&(identical(other.numberOfAyahs, numberOfAyahs) || other.numberOfAyahs == numberOfAyahs)&&(identical(other.revelationType, revelationType) || other.revelationType == revelationType)&&(identical(other.reciter, reciter) || other.reciter == reciter));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,number,name,englishName,englishNameTranslation,numberOfAyahs,revelationType);
+int get hashCode => Object.hash(runtimeType,number,name,englishName,englishNameTranslation,numberOfAyahs,revelationType,reciter);
 
 @override
 String toString() {
-  return 'SurahModel(number: $number, name: $name, englishName: $englishName, englishNameTranslation: $englishNameTranslation, numberOfAyahs: $numberOfAyahs, revelationType: $revelationType)';
+  return 'SurahModel(number: $number, name: $name, englishName: $englishName, englishNameTranslation: $englishNameTranslation, numberOfAyahs: $numberOfAyahs, revelationType: $revelationType, reciter: $reciter)';
 }
 
 
@@ -257,11 +271,11 @@ abstract mixin class _$SurahModelCopyWith<$Res> implements $SurahModelCopyWith<$
   factory _$SurahModelCopyWith(_SurahModel value, $Res Function(_SurahModel) _then) = __$SurahModelCopyWithImpl;
 @override @useResult
 $Res call({
- num? number, String? name, String? englishName, String? englishNameTranslation, num? numberOfAyahs, String? revelationType
+ num? number, String? name, String? englishName, String? englishNameTranslation, num? numberOfAyahs, String? revelationType, ReciterModel? reciter
 });
 
 
-
+@override $ReciterModelCopyWith<$Res>? get reciter;
 
 }
 /// @nodoc
@@ -274,7 +288,7 @@ class __$SurahModelCopyWithImpl<$Res>
 
 /// Create a copy of SurahModel
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? number = freezed,Object? name = freezed,Object? englishName = freezed,Object? englishNameTranslation = freezed,Object? numberOfAyahs = freezed,Object? revelationType = freezed,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? number = freezed,Object? name = freezed,Object? englishName = freezed,Object? englishNameTranslation = freezed,Object? numberOfAyahs = freezed,Object? revelationType = freezed,Object? reciter = freezed,}) {
   return _then(_SurahModel(
 number: freezed == number ? _self.number : number // ignore: cast_nullable_to_non_nullable
 as num?,name: freezed == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
@@ -282,11 +296,24 @@ as String?,englishName: freezed == englishName ? _self.englishName : englishName
 as String?,englishNameTranslation: freezed == englishNameTranslation ? _self.englishNameTranslation : englishNameTranslation // ignore: cast_nullable_to_non_nullable
 as String?,numberOfAyahs: freezed == numberOfAyahs ? _self.numberOfAyahs : numberOfAyahs // ignore: cast_nullable_to_non_nullable
 as num?,revelationType: freezed == revelationType ? _self.revelationType : revelationType // ignore: cast_nullable_to_non_nullable
-as String?,
+as String?,reciter: freezed == reciter ? _self.reciter : reciter // ignore: cast_nullable_to_non_nullable
+as ReciterModel?,
   ));
 }
 
+/// Create a copy of SurahModel
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$ReciterModelCopyWith<$Res>? get reciter {
+    if (_self.reciter == null) {
+    return null;
+  }
 
+  return $ReciterModelCopyWith<$Res>(_self.reciter!, (value) {
+    return _then(_self.copyWith(reciter: value));
+  });
+}
 }
 
 // dart format on

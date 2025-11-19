@@ -26,8 +26,22 @@ class $AssetsImagesGen {
   AssetGenImage get imgFigure3 =>
       const AssetGenImage('assets/images/img-figure-3.png');
 
+  /// File path: assets/images/img-frame-ayat.png
+  AssetGenImage get imgFrameAyat =>
+      const AssetGenImage('assets/images/img-frame-ayat.png');
+
+  /// File path: assets/images/img-gradient-bg.png
+  AssetGenImage get imgGradientBg =>
+      const AssetGenImage('assets/images/img-gradient-bg.png');
+
   /// List of all assets
-  List<AssetGenImage> get values => [imgFigure1, imgFigure2, imgFigure3];
+  List<AssetGenImage> get values => [
+    imgFigure1,
+    imgFigure2,
+    imgFigure3,
+    imgFrameAyat,
+    imgGradientBg,
+  ];
 }
 
 class $AssetsJsonGen {

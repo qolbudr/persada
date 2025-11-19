@@ -1,5 +1,6 @@
 import 'dart:convert';
 import 'package:dio/dio.dart';
+import 'package:dio_cache_interceptor/dio_cache_interceptor.dart';
 import 'package:flutter/services.dart';
 import 'package:myumrah/repository/r_quran/models/reciter_model/reciter_model.dart';
 import 'package:myumrah/repository/r_quran/models/surah_model/surah_model.dart';
@@ -26,6 +27,7 @@ class RIQuran implements RQuran {
   Future<List<SurahModel>> surahs() async {
     try {
       final dio = Dio();
+      dio.interceptors.add(DioCacheInterceptor(options: CacheOptions(store: MemCacheStore())));
       final response = await dio.get('https://api.alquran.cloud/v1/surah');
       final json = response.data as Map<String, dynamic>;
       final surahs = (json['data'] as List).map((e) => SurahModel.fromJson(e)).toList();

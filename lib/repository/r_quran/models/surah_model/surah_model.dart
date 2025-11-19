@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:myumrah/repository/r_quran/models/reciter_model/reciter_model.dart';
 
 part 'surah_model.freezed.dart';
 part 'surah_model.g.dart';
@@ -13,6 +14,7 @@ abstract class SurahModel with _$SurahModel {
     String? englishNameTranslation,
     num? numberOfAyahs,
     String? revelationType,
+    ReciterModel? reciter,
   }) = _SurahModel;
 
   factory SurahModel.fromJson(Map<String, dynamic> json) => _$SurahModelFromJson(json);
