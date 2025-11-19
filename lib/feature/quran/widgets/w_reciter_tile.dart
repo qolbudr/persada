@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:myumrah/core/theme/theme_radius.dart';
 import 'package:myumrah/core/theme/theme_text.dart';
-import 'package:myumrah/repository/r_quran/models/reciter_model.dart';
+import 'package:myumrah/repository/r_quran/models/reciter_model/reciter_model.dart';
 
 class WReciterTile extends StatelessWidget {
   const WReciterTile({super.key, required this.data});

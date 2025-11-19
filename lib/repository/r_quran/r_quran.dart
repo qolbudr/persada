@@ -1,7 +1,7 @@
 import 'dart:convert';
 
 import 'package:flutter/services.dart';
-import 'package:myumrah/repository/r_quran/models/reciter_model.dart';
+import 'package:myumrah/repository/r_quran/models/reciter_model/reciter_model.dart';
 
 abstract class RQuran {
   Future<List<ReciterModel>> reciters();

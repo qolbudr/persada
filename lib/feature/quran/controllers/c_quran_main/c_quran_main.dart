@@ -1,7 +1,7 @@
 import 'package:get/get.dart';
 import 'package:myumrah/core/models/status.dart';
 import 'package:myumrah/feature/quran/controllers/c_quran_main/c_quran_main_state.dart';
-import 'package:myumrah/repository/r_quran/models/reciter_model.dart';
+import 'package:myumrah/repository/r_quran/models/reciter_model/reciter_model.dart';
 import 'package:myumrah/repository/r_quran/r_quran.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 
