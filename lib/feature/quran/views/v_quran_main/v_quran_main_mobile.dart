@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:myumrah/core/theme/theme_color.dart';
+import 'package:myumrah/core/utils/extensions.dart';
 import 'package:myumrah/core/widgets/w_appbar.dart';
 import 'package:myumrah/core/widgets/w_refresher.dart';
 import 'package:myumrah/core/widgets/w_wrapper.dart';
@@ -12,14 +14,17 @@ class VQuranMainMobile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final o = Get.put(CQuranMain());
-    return Scaffold(
-      body: Obx(
-        () => WWrapper(
-          appBar: const WAppbar(title: "Alquran Player"),
+    return Obx(
+      () => Scaffold(
+        body: WWrapper(
+          appBar: WAppbar(title: "Alquran Player"),
           body: WRefresher(
             controller: o.refreshController,
             onRefresh: o.onGetData,
-            child: ListView(children: [...o.state.reciters.map((item) => WReciterTile())])),
+            child: ListView(
+              children: [...o.state.reciters.map((item) => WReciterTile(data: item))].joinWidget(Divider(height: 1, color: ThemeColor.dividerMain)),
+            ),
+          ),
         ),
       ),
     );

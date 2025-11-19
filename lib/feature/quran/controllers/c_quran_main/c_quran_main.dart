@@ -22,6 +22,7 @@ class CQuranMain extends GetxController {
   void onGetData() async {
     try {
       _state.value = state.copyWith(status: const Status.loading());
+      await Future.delayed(const Duration(seconds: 2, milliseconds: 500)); // mock fetching from network
       final response = await rQuran.reciters();
       List<ReciterModel> data = [];
 
