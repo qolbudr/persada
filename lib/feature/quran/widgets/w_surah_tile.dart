@@ -4,12 +4,14 @@ import 'package:myumrah/core/theme/theme_text.dart';
 import 'package:myumrah/repository/r_quran/models/surah_model/surah_model.dart';
 
 class WSurahTile extends StatelessWidget {
-  const WSurahTile({super.key, this.item});
+  const WSurahTile({super.key, this.item, this.onTap});
   final SurahModel? item;
+  final VoidCallback? onTap;
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
+      onTap: onTap,
       child: Container(
         padding: EdgeInsets.symmetric(vertical: 15, horizontal: 20),
         child: Row(

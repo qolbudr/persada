@@ -27,7 +27,7 @@ class VQuranMainMobile extends StatelessWidget {
                 ...o.state.reciters.map(
                   (item) => WReciterTile(
                     data: item,
-                    onTap: () => QuranRoutes.toSurah(),
+                    onTap: () => QuranRoutes.toSurah(item),
                   ),
                 ),
               ].joinWidget(Divider(height: 1, color: ThemeColor.dividerMain)),
