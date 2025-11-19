@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:myumrah/core/theme/theme_color.dart';
 import 'package:myumrah/core/theme/theme_text.dart';
 
@@ -14,6 +15,7 @@ class WAppbar extends StatelessWidget {
         spacing: 22,
         children: [
           InkWell(
+            onTap: () => Get.back(),
             child: Container(
               width: 38,
               height: 38,
