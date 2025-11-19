@@ -80,7 +80,9 @@ flutter build ios --release
 UI durasi yang ditampilkan di List Surah diganti menjadi chevron dikarenakan keterbatasan API yang tidak menyertakan durasi pada endpoint `https://api.alquran.cloud/v1/surah`
 
 ## Screenshot
-![Layar Utama](screenshot/layar_utama.gif)
-![Play Pause](screenshot/play_pause.gif)
-![Playlist](screenshot/playlist.gif)
+<div style="display:flex; flex-wrap:wrap; gap:10px;">
+  <img src="screenshot/layar_utama.gif" style="width:250px; max-width:100%;">
+  <img src="screenshot/play_pause.gif" style="width:250px; max-width:100%;">
+  <img src="screenshot/playlist.gif" style="width:250px; max-width:100%;">
+</div>
 
