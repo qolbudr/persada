@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:myumrah/core/widgets/w_appbar.dart';
+import 'package:myumrah/core/widgets/w_refresher.dart';
 import 'package:myumrah/core/widgets/w_wrapper.dart';
+import 'package:myumrah/feature/quran/controllers/c_quran_main/c_quran_main.dart';
 import 'package:myumrah/feature/quran/widgets/w_reciter_tile.dart';
 
 class VQuranMainMobile extends StatelessWidget {
@@ -8,17 +11,17 @@ class VQuranMainMobile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final o = Get.put(CQuranMain());
     return Scaffold(
-      body: WWrapper(
-        appBar: const WAppbar(
-          title: "Alquran Player",
+      body: Obx(
+        () => WWrapper(
+          appBar: const WAppbar(title: "Alquran Player"),
+          body: WRefresher(
+            controller: o.refreshController,
+            onRefresh: o.onGetData,
+            child: ListView(children: [...o.state.reciters.map((item) => WReciterTile())])),
         ),
-        body: ListView(
-          children: [
-            WReciterTile(),
-          ],
-        ),
-      )
+      ),
     );
   }
 }

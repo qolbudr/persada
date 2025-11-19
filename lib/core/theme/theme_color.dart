@@ -5,4 +5,5 @@ class ThemeColor {
   static const backgroundSecondary = Color(0xff2A2A2A);
   static const textPrimary = Color(0xffFAFAFA);
   static const dividerMain = Color(0xff737373);
+  static const primaryColor = Color(0xffFD8A09);
 }
