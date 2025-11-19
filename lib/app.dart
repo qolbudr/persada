@@ -16,12 +16,11 @@ class MyUmrah extends StatelessWidget {
       themeMode: ThemeMode.light,
       defaultTransition: Transition.cupertino,
       transitionDuration: const Duration(milliseconds: 100),
-      theme: ThemeData(colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+      theme: ThemeData(
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         scaffoldBackgroundColor: ThemeColor.backgroundMain,
-        textTheme: TextTheme.of(context).apply(
-          bodyColor: ThemeColor.textPrimary,
-          displayColor: ThemeColor.textPrimary,
-        )
+        textTheme: TextTheme.of(context).apply(bodyColor: ThemeColor.textPrimary, displayColor: ThemeColor.textPrimary),
+        sliderTheme: SliderThemeData(thumbColor: Colors.white, thumbShape: RoundSliderThumbShape(enabledThumbRadius: 6), padding: EdgeInsets.zero),
       ),
       initialRoute: QuranRoutes.main,
       getPages: BaseRoute.route,
