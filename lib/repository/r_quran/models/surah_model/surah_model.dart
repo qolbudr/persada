@@ -11,7 +11,7 @@ abstract class SurahModel with _$SurahModel {
     String? name,
     String? englishName,
     String? englishNameTranslation,
-    String? numberOfAyahs,
+    num? numberOfAyahs,
     String? revelationType,
   }) = _SurahModel;
 

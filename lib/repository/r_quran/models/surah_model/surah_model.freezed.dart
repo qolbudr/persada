@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$SurahModel {
 
- num? get number; String? get name; String? get englishName; String? get englishNameTranslation; String? get numberOfAyahs; String? get revelationType;
+ num? get number; String? get name; String? get englishName; String? get englishNameTranslation; num? get numberOfAyahs; String? get revelationType;
 /// Create a copy of SurahModel
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -48,7 +48,7 @@ abstract mixin class $SurahModelCopyWith<$Res>  {
   factory $SurahModelCopyWith(SurahModel value, $Res Function(SurahModel) _then) = _$SurahModelCopyWithImpl;
 @useResult
 $Res call({
- num? number, String? name, String? englishName, String? englishNameTranslation, String? numberOfAyahs, String? revelationType
+ num? number, String? name, String? englishName, String? englishNameTranslation, num? numberOfAyahs, String? revelationType
 });
 
 
@@ -72,7 +72,7 @@ as num?,name: freezed == name ? _self.name : name // ignore: cast_nullable_to_no
 as String?,englishName: freezed == englishName ? _self.englishName : englishName // ignore: cast_nullable_to_non_nullable
 as String?,englishNameTranslation: freezed == englishNameTranslation ? _self.englishNameTranslation : englishNameTranslation // ignore: cast_nullable_to_non_nullable
 as String?,numberOfAyahs: freezed == numberOfAyahs ? _self.numberOfAyahs : numberOfAyahs // ignore: cast_nullable_to_non_nullable
-as String?,revelationType: freezed == revelationType ? _self.revelationType : revelationType // ignore: cast_nullable_to_non_nullable
+as num?,revelationType: freezed == revelationType ? _self.revelationType : revelationType // ignore: cast_nullable_to_non_nullable
 as String?,
   ));
 }
@@ -158,7 +158,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( num? number,  String? name,  String? englishName,  String? englishNameTranslation,  String? numberOfAyahs,  String? revelationType)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( num? number,  String? name,  String? englishName,  String? englishNameTranslation,  num? numberOfAyahs,  String? revelationType)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _SurahModel() when $default != null:
 return $default(_that.number,_that.name,_that.englishName,_that.englishNameTranslation,_that.numberOfAyahs,_that.revelationType);case _:
@@ -179,7 +179,7 @@ return $default(_that.number,_that.name,_that.englishName,_that.englishNameTrans
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( num? number,  String? name,  String? englishName,  String? englishNameTranslation,  String? numberOfAyahs,  String? revelationType)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( num? number,  String? name,  String? englishName,  String? englishNameTranslation,  num? numberOfAyahs,  String? revelationType)  $default,) {final _that = this;
 switch (_that) {
 case _SurahModel():
 return $default(_that.number,_that.name,_that.englishName,_that.englishNameTranslation,_that.numberOfAyahs,_that.revelationType);case _:
@@ -199,7 +199,7 @@ return $default(_that.number,_that.name,_that.englishName,_that.englishNameTrans
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( num? number,  String? name,  String? englishName,  String? englishNameTranslation,  String? numberOfAyahs,  String? revelationType)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( num? number,  String? name,  String? englishName,  String? englishNameTranslation,  num? numberOfAyahs,  String? revelationType)?  $default,) {final _that = this;
 switch (_that) {
 case _SurahModel() when $default != null:
 return $default(_that.number,_that.name,_that.englishName,_that.englishNameTranslation,_that.numberOfAyahs,_that.revelationType);case _:
@@ -221,7 +221,7 @@ class _SurahModel extends SurahModel {
 @override final  String? name;
 @override final  String? englishName;
 @override final  String? englishNameTranslation;
-@override final  String? numberOfAyahs;
+@override final  num? numberOfAyahs;
 @override final  String? revelationType;
 
 /// Create a copy of SurahModel
@@ -257,7 +257,7 @@ abstract mixin class _$SurahModelCopyWith<$Res> implements $SurahModelCopyWith<$
   factory _$SurahModelCopyWith(_SurahModel value, $Res Function(_SurahModel) _then) = __$SurahModelCopyWithImpl;
 @override @useResult
 $Res call({
- num? number, String? name, String? englishName, String? englishNameTranslation, String? numberOfAyahs, String? revelationType
+ num? number, String? name, String? englishName, String? englishNameTranslation, num? numberOfAyahs, String? revelationType
 });
 
 
@@ -281,7 +281,7 @@ as num?,name: freezed == name ? _self.name : name // ignore: cast_nullable_to_no
 as String?,englishName: freezed == englishName ? _self.englishName : englishName // ignore: cast_nullable_to_non_nullable
 as String?,englishNameTranslation: freezed == englishNameTranslation ? _self.englishNameTranslation : englishNameTranslation // ignore: cast_nullable_to_non_nullable
 as String?,numberOfAyahs: freezed == numberOfAyahs ? _self.numberOfAyahs : numberOfAyahs // ignore: cast_nullable_to_non_nullable
-as String?,revelationType: freezed == revelationType ? _self.revelationType : revelationType // ignore: cast_nullable_to_non_nullable
+as num?,revelationType: freezed == revelationType ? _self.revelationType : revelationType // ignore: cast_nullable_to_non_nullable
 as String?,
   ));
 }

@@ -4,13 +4,14 @@ import 'package:myumrah/core/theme/theme_text.dart';
 import 'package:myumrah/repository/r_quran/models/reciter_model/reciter_model.dart';
 
 class WReciterTile extends StatelessWidget {
-  const WReciterTile({super.key, required this.data});
+  const WReciterTile({super.key, this.onTap, required this.data});
   final ReciterModel data;
+  final VoidCallback? onTap;
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () {},
+      onTap: onTap,
       child: Container(
         padding: EdgeInsets.symmetric(vertical: 15, horizontal: 20),
         child: Row(
@@ -18,7 +19,12 @@ class WReciterTile extends StatelessWidget {
           children: [
             ClipRRect(
               borderRadius: BorderRadius.circular(ThemeRadius.roundedM),
-              child: Image.asset(data.image ?? '-', width: 60, height: 60, fit: BoxFit.cover),
+              child: Image.asset(
+                data.image ?? '-',
+                width: 60,
+                height: 60,
+                fit: BoxFit.cover,
+              ),
             ),
             Text(data.name ?? "Unknown", style: ThemeText.bodyLRegular()),
           ],

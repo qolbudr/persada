@@ -11,7 +11,7 @@ _SurahModel _$SurahModelFromJson(Map<String, dynamic> json) => _SurahModel(
   name: json['name'] as String?,
   englishName: json['englishName'] as String?,
   englishNameTranslation: json['englishNameTranslation'] as String?,
-  numberOfAyahs: json['numberOfAyahs'] as String?,
+  numberOfAyahs: json['numberOfAyahs'] as num?,
   revelationType: json['revelationType'] as String?,
 );
 
