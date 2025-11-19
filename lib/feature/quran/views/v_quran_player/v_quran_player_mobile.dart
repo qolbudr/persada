@@ -88,52 +88,91 @@ class VQuranPlayerMobile extends StatelessWidget {
                                   builder: (context, asyncSnapshot) {
                                     final position = asyncSnapshot.data ?? Duration.zero;
                                     return LinearProgressIndicator(
+                                      backgroundColor: Color(0xffA3A3A3),
+                                      color: Colors.white,
                                       value: o.audioPlayer.duration?.inMilliseconds == 0
                                           ? 0
                                           : position.inMilliseconds / (o.audioPlayer.duration?.inMilliseconds ?? 1),
                                     );
                                   }
                                 ),
+                                const SizedBox(height: 8),
+                                Align(alignment: Alignment.centerRight, child: Text(o.audioPlayer.duration?.toString().split('.').first.substring(2, 7) ?? "00:00", style: TextStyle(color: Colors.white))),
                                 const Spacer(),
                                 Row(
                                   mainAxisAlignment:
                                       MainAxisAlignment.spaceAround,
                                   children: [
                                     IconButton(
-                                      onPressed: () {},
+                                      onPressed: () => o.audioPlayer.seekToPrevious(),
                                       icon: Icon(
                                         Icons.skip_previous,
                                         color: ThemeColor.textPrimary,
                                         size: 40,
                                       ),
                                     ),
-                                    Container(
-                                      decoration: BoxDecoration(
-                                        shape: BoxShape.circle,
-                                        color: ThemeColor.backgroundSecondary,
-                                        boxShadow: [
-                                          BoxShadow(
-                                            blurRadius: 20,
-                                            offset: Offset(12, 17),
-                                            spreadRadius: 8,
-                                            color: Colors.black.withOpacity(
-                                              0.18,
+                                    StreamBuilder<PlayerState>(
+                                      stream: o.audioPlayer.playerStateStream,
+                                      builder: (context, asyncSnapshot) {
+                                        final processingState = asyncSnapshot.data?.processingState;
+                                        if(processingState == ProcessingState.loading) {
+                                          return SizedBox(
+                                            width: 90,
+                                            height: 90,
+                                            child: CircularProgressIndicator(color: Colors.white)
+                                          );
+                                        } else {
+                                          return Container(
+                                            decoration: BoxDecoration(
+                                              shape: BoxShape.circle,
+                                              color: ThemeColor.backgroundSecondary,
+                                              boxShadow: [
+                                                BoxShadow(
+                                                  blurRadius: 20,
+                                                  offset: Offset(12, 17),
+                                                  spreadRadius: 8,
+                                                  color: Colors.black.withOpacity(
+                                                    0.18,
+                                                  ),
+                                                ),
+                                              ],
                                             ),
-                                          ),
-                                        ],
-                                      ),
-                                      width: 90,
-                                      height: 90,
-                                      child: Center(
-                                        child: Icon(
-                                          Icons.pause,
-                                          color: ThemeColor.textPrimary,
-                                          size: 50,
-                                        ),
-                                      ),
+                                            width: 90,
+                                            height: 90,
+                                            child: Column(
+                                              mainAxisAlignment: MainAxisAlignment.center,
+                                              children: [
+                                                if(asyncSnapshot.data?.playing ?? false) ...[
+                                                  Center(
+                                                    child: IconButton(
+                                                      onPressed: () => o.audioPlayer.pause(),
+                                                      icon: Icon(
+                                                        Icons.pause,
+                                                        color: ThemeColor.textPrimary,
+                                                        size: 50,
+                                                      ),
+                                                    ),
+                                                  )
+                                                ] else ...[
+                                                  Center(
+                                                    child: IconButton(
+                                                      onPressed: () => o.audioPlayer.play(),
+                                                      icon: Icon(
+                                                        Icons.play_arrow,
+                                                        color: ThemeColor.textPrimary,
+                                                        size: 50,
+                                                      ),
+                                                    ),
+                                                  )
+                                                ],
+                                              ],
+                                            ),
+                                          );
+                                        }
+                                      }
                                     ),
                                     IconButton(
-                                      onPressed: () {},
+                                      onPressed: () => o.audioPlayer.seekToNext(),
                                       icon: Icon(
                                         Icons.skip_next,
                                         color: ThemeColor.textPrimary,
