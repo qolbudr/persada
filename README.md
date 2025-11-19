@@ -1,3 +1,8 @@
+## Tech Stack
+- State Management: GetX
+- Audio Player: Just Audio
+- API / HTTP Fetch: Dio
+
 ## Penjelasan Folder
 note: folder yang dijelaskan ada dalam lingkup folder `lib`
 
@@ -75,7 +80,7 @@ flutter build ios --release
 UI durasi yang ditampilkan di List Surah diganti menjadi chevron dikarenakan keterbatasan API yang tidak menyertakan durasi pada endpoint `https://api.alquran.cloud/v1/surah`
 
 ## Screenshot
-![Layar Utama](screenshot/layar_utama.mov)
-![Play Pause](screenshot/play_pause.mov)
-![Playlist](screenshot/playlist.mov)
+![Layar Utama](screenshot/layar_utama.gif)
+![Play Pause](screenshot/play_pause.gif)
+![Playlist](screenshot/playlist.gif)
 
