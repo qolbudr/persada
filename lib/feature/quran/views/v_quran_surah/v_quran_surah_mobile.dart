@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:myumrah/core/theme/theme_color.dart';
+import 'package:myumrah/core/utils/extensions.dart';
 import 'package:myumrah/core/widgets/w_appbar.dart';
 import 'package:myumrah/core/widgets/w_refresher.dart';
 import 'package:myumrah/core/widgets/w_wrapper.dart';
 import 'package:myumrah/feature/quran/controllers/c_quran_surah/c_quran_surah.dart';
+import 'package:myumrah/feature/quran/widgets/w_surah_tile.dart';
 
 class VQuranSurahMobile extends StatelessWidget {
   const VQuranSurahMobile({super.key});
@@ -14,19 +17,16 @@ class VQuranSurahMobile extends StatelessWidget {
     return Obx(
       () => Scaffold(
         body: WWrapper(
-          appBar: WAppbar(title: "Alquran Player ${o.state.surahs.length}"),
+          appBar: WAppbar(title: "Abdurahman As-Sudais"),
           body: WRefresher(
             controller: o.refreshController,
             onRefresh: o.onGetData,
             child: ListView(
               children: [
                 ...o.state.surahs.map(
-                  (item) => ListTile(
-                    title: Text(item.name ?? "Unknown"),
-                    subtitle: Text("Ayahs: "),
-                  ),
+                  (item) => WSurahTile(item: item)
                 ),
-              ],
+              ].joinWidget(Divider(height: 1, color: ThemeColor.dividerMain)),
             ),
           ),
         ),
